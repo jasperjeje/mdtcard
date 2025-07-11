@@ -1,94 +1,94 @@
-# Markdown to Card - MCP工具
+# Markdown to Card - MCP Tool
 
-一个强大的MCP工具，用于将Markdown文档转换为精美的知识卡片图像，支持多种卡片风格，适用于博客、社交媒体分享。
+A powerful MCP tool for converting Markdown documents into beautiful knowledge card images, supporting multiple card styles, perfect for blogs and social media sharing.
 
+[中文版本](README_zh.md) | [English Version](README.md)
 
 <div align="center">
-  <img src="./images/image.png" alt="MDTCard 演示截图" width="100%" style="max-width: 800px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+  <img src="./images/image.png" alt="MDTCard Demo Screenshot" width="100%" style="max-width: 800px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
 </div>
 
 <br>
 
-## 功能特性
+## Features
 
-### 🎨 多种卡片风格
-支持20+种精美卡片风格：
-- 温暖柔和 - 适合生活分享
-- 简约高级灰 - 专业商务风格
-- 梦幻渐变 - 创意设计风格
-- 清新自然 - 绿色环保主题
-- 科技蓝 - 技术内容专用
-- 优雅紫 - 高端典雅风格
-- 活力橙 - 充满活力的设计
-- 更多风格...
+### 🎨 Multiple Card Styles
+Support for 20+ beautiful card styles:
+- Warm Soft - Perfect for life sharing
+- Elegant Gray - Professional business style
+- Dreamy Gradient - Creative design style
+- Fresh Natural - Green eco-friendly theme
+- Tech Blue - Dedicated for technical content
+- Elegant Purple - Premium elegant style
+- Vibrant Orange - Energetic design
+- More styles...
 
-### 📝 完整的Markdown支持
-- ✅ 标题（H1-H6）
-- ✅ 段落和文本样式
-- ✅ 有序和无序列表
-- ✅ 代码块（支持语法高亮）
-- ✅ 引用块
-- ✅ 表格
-- ✅ 分割线
-- ✅ 数学公式（计划支持）
-- ✅ 流程图和时序图（计划支持）
+### 📝 Complete Markdown Support
+- ✅ Headers (H1-H6)
+- ✅ Paragraphs and text styles
+- ✅ Ordered and unordered lists
+- ✅ Code blocks (with syntax highlighting)
+- ✅ Quote blocks
+- ✅ Tables
+- ✅ Horizontal rules
+- ✅ Math formulas (planned)
+- ✅ Flowcharts and sequence diagrams (planned)
 
+### 🚀 Multiple Usage Methods
+- **MCP Server** - Integrate with Claude, Cursor, and other AI tools
+- **API Service** - HTTP interface for integration with any application
+- **Command Line Tool** - Direct terminal usage
 
-### 🚀 多种使用方式
-- **MCP服务器** - 与Claude、Cursor等AI工具集成
-- **API服务** - HTTP接口，可集成到任何应用
-- **命令行工具** - 直接在终端使用
+## Quick Start
 
-## 快速开始
-
-### 1. 安装依赖
+### 1. Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 2. 构建项目
+### 2. Build Project
 
 ```bash
 npm run build
 ```
 
-### 3. 运行服务
+### 3. Run Service
 
-#### 作为MCP服务器运行
+#### Run as MCP Server
 ```bash
 npm run dev -- --mcp
 ```
 
-#### 作为API服务器运行
+#### Run as API Server
 ```bash
 npm run dev -- --api
 ```
 
-## 使用方法
+## Usage
 
-### MCP服务器模式
+### MCP Server Mode
 
-MCP服务器提供以下工具：
+The MCP server provides the following tools:
 
-#### 1. 列出所有可用样式
+#### 1. List All Available Styles
 ```typescript
-// 工具名称: list_styles
-// 参数: 无
-// 返回: 所有可用样式的列表
+// Tool name: list_styles
+// Parameters: none
+// Returns: List of all available styles
 ```
 
-#### 2. 获取特定样式详情
+#### 2. Get Specific Style Details
 ```typescript
-// 工具名称: get_style
-// 参数: { styleId: string }
-// 返回: 样式的详细配置
+// Tool name: get_style
+// Parameters: { styleId: string }
+// Returns: Detailed configuration of the style
 ```
 
-#### 3. 预览卡片
+#### 3. Preview Card
 ```typescript
-// 工具名称: preview_card
-// 参数: {
+// Tool name: preview_card
+// Parameters: {
 //   markdown: string,
 //   styleId: string,
 //   width?: number,
@@ -96,13 +96,13 @@ MCP服务器提供以下工具：
 //   title?: string,
 //   watermark?: string
 // }
-// 返回: base64格式的图片数据
+// Returns: Base64 format image data
 ```
 
-#### 4. 生成并保存卡片
+#### 4. Generate and Save Card
 ```typescript
-// 工具名称: generate_card
-// 参数: {
+// Tool name: generate_card
+// Parameters: {
 //   markdown: string,
 //   styleId: string,
 //   width?: number,
@@ -111,106 +111,106 @@ MCP服务器提供以下工具：
 //   watermark?: string,
 //   filename?: string
 // }
-// 返回: 保存的文件信息
+// Returns: Information about the saved file
 ```
 
-#### 5. 列出生成的图片
+#### 5. List Generated Images
 ```typescript
-// 工具名称: list_generated_images
-// 参数: 无
-// 返回: 所有生成图片的列表
+// Tool name: list_generated_images
+// Parameters: none
+// Returns: List of all generated images
 ```
 
-#### 6. 删除图片
+#### 6. Delete Image
 ```typescript
-// 工具名称: delete_image
-// 参数: { filename: string }
-// 返回: 删除结果
+// Tool name: delete_image
+// Parameters: { filename: string }
+// Returns: Deletion result
 ```
 
-### API服务器模式
+### API Server Mode
 
-API服务器提供REST接口：
+The API server provides REST interfaces:
 
-#### 获取所有样式
+#### Get All Styles
 ```http
 GET /api/styles
 ```
 
-#### 获取特定样式
+#### Get Specific Style
 ```http
 GET /api/styles/:id
 ```
 
-#### 预览卡片
+#### Preview Card
 ```http
 POST /api/preview
 Content-Type: application/json
 
 {
-  "markdown": "# 标题\n\n这是一个示例",
+  "markdown": "# Title\n\nThis is an example",
   "styleId": "warm-soft",
   "width": 800,
   "height": 1000,
-  "title": "我的卡片",
+  "title": "My Card",
   "watermark": "Created by MD-Card"
 }
 ```
 
-#### 生成卡片
+#### Generate Card
 ```http
 POST /api/generate
 Content-Type: application/json
 
 {
-  "markdown": "# 标题\n\n这是一个示例",
+  "markdown": "# Title\n\nThis is an example",
   "styleId": "warm-soft",
   "width": 800,
   "height": 1000,
-  "title": "我的卡片",
+  "title": "My Card",
   "watermark": "Created by MD-Card",
   "filename": "my-card"
 }
 ```
 
-#### 获取生成的图片
+#### Get Generated Image
 ```http
 GET /api/images/:filename
 ```
 
-#### 列出所有图片
+#### List All Images
 ```http
 GET /api/images
 ```
 
-#### 删除图片
+#### Delete Image
 ```http
 DELETE /api/images/:filename
 ```
 
-## 样式配置
+## Style Configuration
 
-每个样式包含以下配置：
+Each style contains the following configuration:
 
 ```typescript
 interface CardStyle {
-  name: string;           // 样式名称
-  id: string;             // 样式ID
-  backgroundColor: string; // 背景色
-  textColor: string;      // 文本颜色
-  headerColor: string;    // 标题颜色
-  accentColor: string;    // 强调色
-  borderRadius: number;   // 圆角大小
-  padding: number;        // 内边距
-  fontFamily: string;     // 字体
-  fontSize: number;       // 字体大小
-  lineHeight: number;     // 行高
-  gradient?: {            // 渐变背景（可选）
+  name: string;           // Style name
+  id: string;             // Style ID
+  backgroundColor: string; // Background color
+  textColor: string;      // Text color
+  headerColor: string;    // Header color
+  accentColor: string;    // Accent color
+  borderRadius: number;   // Border radius
+  padding: number;        // Padding
+  fontFamily: string;     // Font family
+  fontSize: number;       // Font size
+  lineHeight: number;     // Line height
+  gradient?: {            // Gradient background (optional)
     start: string;
     end: string;
     direction: 'horizontal' | 'vertical' | 'diagonal';
   };
-  shadow?: {              // 阴影效果（可选）
+  shadow?: {              // Shadow effect (optional)
     offsetX: number;
     offsetY: number;
     blur: number;
@@ -219,11 +219,11 @@ interface CardStyle {
 }
 ```
 
-## 与MCP客户端集成
+## Integration with MCP Clients
 
-### 在Claude Desktop中配置
+### Configuration in Claude Desktop
 
-在Claude Desktop的配置文件中添加：
+Add the following to Claude Desktop's configuration file:
 
 ```json
 {
@@ -236,66 +236,66 @@ interface CardStyle {
 }
 ```
 
-### 在Cursor中使用
+### Usage in Cursor
 
-1. 安装MCP扩展
-2. 配置服务器地址
-3. 开始使用卡片生成功能
+1. Install MCP extension
+2. Configure server address
+3. Start using card generation features
 
-## 开发
+## Development
 
-### 项目结构
+### Project Structure
 ```
 src/
-├── api/           # API服务器
-├── styles/        # 卡片样式定义
-├── types/         # TypeScript类型定义
-├── utils/         # 工具函数
-├── mcp-server.ts  # MCP服务器实现
-└── index.ts       # 主入口文件
+├── api/           # API server
+├── styles/        # Card style definitions
+├── types/         # TypeScript type definitions
+├── utils/         # Utility functions
+├── mcp-server.ts  # MCP server implementation
+└── index.ts       # Main entry file
 ```
 
-### 添加新样式
+### Adding New Styles
 
-1. 在 `src/styles/cardStyles.ts` 中添加新样式
-2. 确保样式ID唯一
-3. 测试样式效果
-4. 提交更改
+1. Add new style in `src/styles/cardStyles.ts`
+2. Ensure style ID is unique
+3. Test style effects
+4. Submit changes
 
-### 扩展功能
+### Extending Features
 
-- 添加新的Markdown语法支持
-- 实现更多图片格式输出
-- 添加动画效果
-- 支持自定义字体
+- Add new Markdown syntax support
+- Implement more image format outputs
+- Add animation effects
+- Support custom fonts
 
-## 常见问题
+## FAQ
 
-### Q: 如何自定义样式？
-A: 修改 `src/styles/cardStyles.ts` 文件，添加新的样式配置。
+### Q: How to customize styles?
+A: Modify the `src/styles/cardStyles.ts` file to add new style configurations.
 
-### Q: 支持哪些图片格式？
-A: 目前支持PNG格式，计划添加JPEG、WebP等格式。
+### Q: Which image formats are supported?
+A: Currently supports PNG format, with plans to add JPEG, WebP, and other formats.
 
-### Q: 如何处理中文字体？
-A: 在样式配置中指定中文字体，如 "PingFang SC, Microsoft YaHei"。
+### Q: How to handle Chinese fonts?
+A: Specify Chinese fonts in style configuration, such as "PingFang SC, Microsoft YaHei".
 
-### Q: 图片生成速度慢怎么办？
-A: 可以降低图片尺寸或者使用更简单的样式来提高生成速度。
+### Q: What if image generation is slow?
+A: You can reduce image size or use simpler styles to improve generation speed.
 
-## 许可证
+## License
 
 Apache License 2.0
 
-## 贡献
+## Contributing
 
-欢迎提交Issue和Pull Request来改进这个工具！
+Welcome to submit Issues and Pull Requests to improve this tool!
 
-## 更新日志
+## Changelog
 
 ### v1.0.0
-- 初始版本发布
-- 支持20+种卡片样式
-- 完整的Markdown语法支持
-- MCP和API双模式支持
-- 实时预览和图片生成功能
+- Initial version release
+- Support for 20+ card styles
+- Complete Markdown syntax support
+- Dual MCP and API mode support
+- Real-time preview and image generation features
