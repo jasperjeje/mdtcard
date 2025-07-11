@@ -1,5 +1,11 @@
 # Markdown to Card - MCP工具
 
+<div align="center">
+  <img src="./images/demo-screenshot.svg" alt="MDTCard 演示截图" width="100%" style="max-width: 800px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+</div>
+
+<br>
+
 一个强大的MCP工具，用于将Markdown文档转换为精美的知识卡片图像，支持多种卡片风格，适用于博客、社交媒体分享。
 
 ## 功能特性
@@ -25,6 +31,7 @@
 - ✅ 分割线
 - ✅ 数学公式（计划支持）
 - ✅ 流程图和时序图（计划支持）
+
 
 ### 🚀 多种使用方式
 - **MCP服务器** - 与Claude、Cursor等AI工具集成

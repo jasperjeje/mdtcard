@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 996 574" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+  <!-- Background -->
+  <rect width="996" height="574" fill="url(#bg-gradient)"/>
+  
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="card-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff8e1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f3e5ab;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Header -->
+  <text x="498" y="40" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">
+    📝 Markdown to Card
+  </text>
+  <text x="498" y="65" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="14">
+    实时编辑 Markdown，生成精美卡片
+  </text>
+  
+  <!-- Main Container -->
+  <rect x="25" y="90" width="946" height="460" rx="12" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  
+  <!-- Left Panel - Markdown Editor -->
+  <rect x="40" y="110" width="350" height="420" rx="8" fill="rgba(0,0,0,0.3)"/>
+  <text x="50" y="135" fill="#4CAF50" font-family="monospace" font-size="12" font-weight="bold">📝 Markdown 编辑器</text>
+  
+  <!-- Code content -->
+  <text x="50" y="160" fill="#E3F2FD" font-family="monospace" font-size="10"># JavaScript 学习笔记</text>
+  <text x="50" y="180" fill="#E3F2FD" font-family="monospace" font-size="10">## 变量声明</text>
+  <text x="50" y="200" fill="#E3F2FD" font-family="monospace" font-size="10">JavaScript 有三种声明变量的方式：</text>
+  <text x="50" y="220" fill="#FFD54F" font-family="monospace" font-size="10">- `var` 声明</text>
+  <text x="50" y="240" fill="#FFD54F" font-family="monospace" font-size="10">- `let` 声明</text>
+  <text x="50" y="260" fill="#FFD54F" font-family="monospace" font-size="10">- `const` 声明</text>
+  <text x="50" y="290" fill="#E3F2FD" font-family="monospace" font-size="10">## 数据类型</text>
+  <text x="50" y="310" fill="#A5D6A7" font-family="monospace" font-size="10">### 基本数据类型</text>
+  <text x="50" y="330" fill="#FFD54F" font-family="monospace" font-size="10">- **String**: 字符串</text>
+  <text x="50" y="350" fill="#FFD54F" font-family="monospace" font-size="10">- **Number**: 数字</text>
+  <text x="50" y="370" fill="#FFD54F" font-family="monospace" font-size="10">- **Boolean**: 布尔值</text>
+  
+  <!-- Middle Panel - Settings -->
+  <rect x="410" y="110" width="220" height="420" rx="8" fill="rgba(255,255,255,0.9)"/>
+  <text x="420" y="135" fill="#666" font-family="Arial, sans-serif" font-size="12" font-weight="bold">⚙️ 配置选项</text>
+  
+  <!-- Settings content -->
+  <text x="420" y="165" fill="#333" font-family="Arial, sans-serif" font-size="11" font-weight="bold">基本设置</text>
+  <text x="420" y="185" fill="#666" font-family="Arial, sans-serif" font-size="10">标题</text>
+  <rect x="420" y="195" width="190" height="20" rx="4" fill="#f5f5f5" stroke="#ddd" stroke-width="1"/>
+  <text x="425" y="208" fill="#999" font-family="Arial, sans-serif" font-size="9">卡片标题（可选）</text>
+  
+  <text x="420" y="235" fill="#666" font-family="Arial, sans-serif" font-size="10">水印</text>
+  <rect x="420" y="245" width="190" height="20" rx="4" fill="#f5f5f5" stroke="#ddd" stroke-width="1"/>
+  <text x="425" y="258" fill="#999" font-family="Arial, sans-serif" font-size="9">水印文字（可选）</text>
+  
+  <text x="420" y="285" fill="#333" font-family="Arial, sans-serif" font-size="11" font-weight="bold">尺寸设置</text>
+  <text x="420" y="305" fill="#666" font-family="Arial, sans-serif" font-size="10">宽度                    高度</text>
+  <rect x="420" y="315" width="80" height="20" rx="4" fill="#f5f5f5" stroke="#ddd" stroke-width="1"/>
+  <text x="425" y="328" fill="#333" font-family="Arial, sans-serif" font-size="9">800</text>
+  <rect x="520" y="315" width="80" height="20" rx="4" fill="#f5f5f5" stroke="#ddd" stroke-width="1"/>
+  <text x="525" y="328" fill="#333" font-family="Arial, sans-serif" font-size="9">1000</text>
+  
+  <!-- Preset buttons -->
+  <rect x="420" y="350" width="80" height="25" rx="4" fill="#2196F3" stroke="#1976D2" stroke-width="1"/>
+  <text x="460" y="366" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">生成卡片</text>
+  <rect x="520" y="350" width="80" height="25" rx="4" fill="#4CAF50" stroke="#388E3C" stroke-width="1"/>
+  <text x="560" y="366" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">下载卡片</text>
+  
+  <!-- Right Panel - Preview -->
+  <rect x="650" y="110" width="310" height="420" rx="8" fill="rgba(255,255,255,0.9)"/>
+  <text x="660" y="135" fill="#666" font-family="Arial, sans-serif" font-size="12" font-weight="bold">📱 预览</text>
+  <text x="880" y="135" fill="#999" font-family="Arial, sans-serif" font-size="9">尺寸: 800×1000 px (自动高度)</text>
+  
+  <!-- Preview Card -->
+  <rect x="670" y="150" width="270" height="360" rx="8" fill="url(#card-gradient)" stroke="#ddd" stroke-width="1"/>
+  
+  <!-- Card content -->
+  <text x="690" y="180" fill="#8B4513" font-family="Arial, sans-serif" font-size="16" font-weight="bold">JavaScript学习笔记</text>
+  
+  <text x="690" y="210" fill="#D2691E" font-family="Arial, sans-serif" font-size="14" font-weight="bold">变量声明</text>
+  <text x="690" y="230" fill="#654321" font-family="Arial, sans-serif" font-size="11">JavaScript 有三种声明变量的方式：</text>
+  
+  <circle cx="695" cy="248" r="2" fill="#8B4513"/>
+  <text x="705" y="252" fill="#654321" font-family="Arial, sans-serif" font-size="10">var 声明</text>
+  <circle cx="695" cy="268" r="2" fill="#8B4513"/>
+  <text x="705" y="272" fill="#654321" font-family="Arial, sans-serif" font-size="10">let 声明</text>
+  <circle cx="695" cy="288" r="2" fill="#8B4513"/>
+  <text x="705" y="292" fill="#654321" font-family="Arial, sans-serif" font-size="10">const 声明</text>
+  
+  <text x="690" y="320" fill="#D2691E" font-family="Arial, sans-serif" font-size="14" font-weight="bold">数据类型</text>
+  <text x="690" y="345" fill="#B8860B" font-family="Arial, sans-serif" font-size="12" font-weight="bold">基本数据类型</text>
+  
+  <circle cx="695" cy="363" r="2" fill="#8B4513"/>
+  <text x="705" y="367" fill="#654321" font-family="Arial, sans-serif" font-size="10">String: 字符串</text>
+  <circle cx="695" cy="383" r="2" fill="#8B4513"/>
+  <text x="705" y="387" fill="#654321" font-family="Arial, sans-serif" font-size="10">Number: 数字</text>
+  <circle cx="695" cy="403" r="2" fill="#8B4513"/>
+  <text x="705" y="407" fill="#654321" font-family="Arial, sans-serif" font-size="10">Boolean: 布尔值</text>
+  
+  <!-- Bottom Panel - History -->
+  <rect x="40" y="560" width="920" height="60" rx="8" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="50" y="580" fill="#FFD54F" font-family="Arial, sans-serif" font-size="12" font-weight="bold">📚 生成历史</text>
+  <rect x="50" y="590" width="900" height="20" rx="4" fill="rgba(255,255,255,0.1)"/>
+  <text x="60" y="603" fill="rgba(255,255,255,0.7)" font-family="Arial, sans-serif" font-size="10">暂无生成记录</text>
+  <rect x="880" y="585" width="50" height="20" rx="4" fill="#4CAF50"/>
+  <text x="905" y="598" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">刷新</text>
+</svg>
