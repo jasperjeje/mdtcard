@@ -4,7 +4,7 @@
 
 
 <div align="center">
-  <img src="./images/demo-screenshot.svg" alt="MDTCard 演示截图" width="100%" style="max-width: 800px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+  <img src="./images/image.png" alt="MDTCard 演示截图" width="100%" style="max-width: 800px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
 </div>
 
 <br>
