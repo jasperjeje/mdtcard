@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown to Card - 可视化编辑器</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/markdown/markdown.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📝 Markdown to Card</h1>
+            <p class="subtitle">实时编辑 Markdown，生成精美卡片</p>
+        </header>
+
+        <main class="main-content">
+            <div class="editor-panel">
+                <div class="panel-header">
+                    <h2>📋 Markdown 编辑器</h2>
+                    <div class="editor-controls">
+                        <button id="clearBtn" class="btn btn-secondary">清空</button>
+                        <button id="exampleBtn" class="btn btn-primary">示例</button>
+                    </div>
+                </div>
+                <div class="editor-container">
+                    <textarea id="markdownEditor" placeholder="在这里输入 Markdown 内容..."></textarea>
+                </div>
+            </div>
+
+            <div class="config-panel">
+                <div class="panel-header">
+                    <h2>⚙️ 配置选项</h2>
+                </div>
+                <div class="config-content">
+                    <!-- 基本设置 -->
+                    <div class="config-group">
+                        <h3>基本设置</h3>
+                        <div class="form-group">
+                            <label for="title">标题</label>
+                            <input type="text" id="title" placeholder="卡片标题（可选）">
+                        </div>
+                        <div class="form-group">
+                            <label for="watermark">水印</label>
+                            <input type="text" id="watermark" placeholder="水印文字（可选）">
+                        </div>
+                    </div>
+
+                    <!-- 尺寸设置 -->
+                    <div class="config-group">
+                        <h3>尺寸设置</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="width">宽度</label>
+                                <input type="number" id="width" value="800" min="400" max="2000">
+                            </div>
+                            <div class="form-group">
+                                <label for="height">高度</label>
+                                <input type="number" id="height" value="1000" min="400" max="3000">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="autoHeight" checked>
+                                <span class="checkmark"></span>
+                                自动计算高度（根据内容）
+                            </label>
+                        </div>
+                        <div class="form-row" id="heightLimits">
+                            <div class="form-group">
+                                <label for="minHeight">最小高度</label>
+                                <input type="number" id="minHeight" value="400" min="200" max="1000">
+                            </div>
+                            <div class="form-group">
+                                <label for="maxHeight">最大高度</label>
+                                <input type="number" id="maxHeight" value="5000" min="1000" max="10000">
+                            </div>
+                        </div>
+                        <div class="preset-sizes">
+                            <button class="preset-btn" data-size="800,1000">社交媒体 (800x1000)</button>
+                            <button class="preset-btn" data-size="1080,1920">手机壁纸 (1080x1920)</button>
+                            <button class="preset-btn" data-size="1200,630">Facebook封面 (1200x630)</button>
+                        </div>
+                    </div>
+
+                    <!-- 格式设置 -->
+                    <div class="config-group">
+                        <h3>输出格式</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="format">格式</label>
+                                <select id="format">
+                                    <option value="png">PNG</option>
+                                    <option value="jpg">JPG</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="quality">质量 (JPG)</label>
+                                <input type="range" id="quality" min="10" max="100" value="90">
+                                <span id="qualityValue">90</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 样式选择 -->
+                    <div class="config-group">
+                        <h3>卡片风格</h3>
+                        <div class="style-grid" id="styleGrid">
+                            <!-- 动态生成样式选项 -->
+                        </div>
+                    </div>
+
+                    <!-- 操作按钮 -->
+                    <div class="config-group">
+                        <div class="action-buttons">
+                            <button id="previewBtn" class="btn btn-primary">
+                                <span class="btn-icon">👀</span>
+                                实时预览
+                            </button>
+                            <button id="generateBtn" class="btn btn-success">
+                                <span class="btn-icon">💾</span>
+                                生成并下载
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview-panel">
+                <div class="panel-header">
+                    <h2>🖼️ 预览</h2>
+                    <div class="preview-controls">
+                        <button id="fullscreenBtn" class="btn btn-secondary">全屏预览</button>
+                        <button id="downloadBtn" class="btn btn-primary" disabled>下载图片</button>
+                    </div>
+                </div>
+                <div class="preview-container" id="previewContainer">
+                    <div class="preview-placeholder">
+                        <div class="placeholder-icon">🖼️</div>
+                        <p>点击"实时预览"查看效果</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 图片历史 -->
+        <section class="history-section">
+            <div class="panel-header">
+                <h2>📚 生成历史</h2>
+                <button id="refreshHistoryBtn" class="btn btn-secondary">刷新</button>
+            </div>
+            <div class="history-grid" id="historyGrid">
+                <!-- 动态生成历史记录 -->
+            </div>
+        </section>
+    </div>
+
+    <!-- 全屏预览模态框 -->
+    <div id="fullscreenModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <img id="fullscreenImage" alt="全屏预览">
+        </div>
+    </div>
+
+    <!-- 加载提示 -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>正在生成卡片...</p>
+        </div>
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>

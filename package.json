@@ -1,0 +1,45 @@
+{
+  "name": "md-to-card",
+  "version": "1.0.0",
+  "description": "MCP tool for converting Markdown to beautiful image cards",
+  "main": "dist/index.js",
+  "type": "module",
+  "port": 3001,
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "vitest"
+  },
+  "keywords": [
+    "mcp",
+    "markdown",
+    "image",
+    "card",
+    "converter"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.4.0",
+    "canvas": "^2.11.2",
+    "chalk": "^5.3.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "html-to-text": "^9.0.5",
+    "markdown-it": "^14.0.0",
+    "markdown-it-math": "^4.1.1",
+    "markdown-it-mermaid": "^0.2.5",
+    "markdown-it-table": "^2.0.6",
+    "sharp": "^0.33.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^20.10.6",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.3"
+  }
+}
